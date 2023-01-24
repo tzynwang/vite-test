@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import viteLogoInPublic from '/vite.svg';
 import reactLogoSrc from './assets/react.svg';
 import './App.css';
 
@@ -7,7 +8,7 @@ function App(): React.ReactElement {
     <div className="App">
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+          <img src={viteLogoInPublic} className="logo" alt="Vite logo" />
         </a>
         <a href="https://reactjs.org" target="_blank">
           <img src={reactLogoSrc} className="logo react" alt="React logo" />
