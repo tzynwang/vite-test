@@ -22,7 +22,7 @@ clean:
 
 # deploy build result to gitHub repo as branch "gh-pages"
 .PHONY: deploy
-deploy: clean
+deploy:
 	npm run build && \
 	cd $(BUILD_OUTPUT) && \
 	git init && \
