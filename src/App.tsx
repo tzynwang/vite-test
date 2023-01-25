@@ -14,7 +14,7 @@ function App(): React.ReactElement {
           <img src={reactLogoSrc} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>A Vite start-up with React TypeScript template ⚛️</h1>
       <p>
         Edit <code>src/App.tsx</code> and save to test HMR
       </p>
