@@ -18,13 +18,13 @@ preview:
 # remove build folder and its content
 .PHONY: clean
 clean:
-	rm -rf $(BUILD_OUTPUT)
+	rm -rf $(VITE_BUILD_OUTDIR)
 
 # deploy build result to gitHub repo as branch "gh-pages"
 .PHONY: deploy
 deploy:
 	make build && \
-	cd $(BUILD_OUTPUT) && \
+	cd $(VITE_BUILD_OUTDIR) && \
 	git init && \
 	git remote -v | grep -w origin || git remote add origin git@github.com:tzynwang/vite-test.git && \
 	git branch -m gh-pages && \
