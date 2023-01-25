@@ -10,7 +10,7 @@ function App(): React.ReactElement {
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogoInPublic} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="https://beta.reactjs.org" target="_blank">
           <img src={reactLogoSrc} className="logo react" alt="React logo" />
         </a>
       </div>
