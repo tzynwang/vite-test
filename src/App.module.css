@@ -1,3 +1,8 @@
+:root {
+  --post-min-height: 240px;
+  --post-max-height: 360px;
+}
+
 :local(.nav_ul_container) {
   display: block;
 }
@@ -20,22 +25,25 @@
 
 :local(.main_section_main_up_sm) {
   display: grid;
-  grid-template-columns: 5fr 2fr;
-  grid-template-rows: repeat(2, clamp(240px, 20vh, 360px));
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: repeat(
+    2,
+    clamp(var(--post-min-height), 20vh, var(--post-max-height))
+  );
   grid-template-areas: 'latest second' 'latest third';
 }
 
 :local(.main_section_main_latest) {
   grid-area: latest;
-  min-height: 240px;
+  min-height: var(--post-min-height);
 }
 
 :local(.main_section_main_second) {
   grid-area: second;
-  min-height: 240px;
+  min-height: var(--post-min-height);
 }
 
 :local(.main_section_main_third) {
   grid-area: third;
-  min-height: 240px;
+  min-height: var(--post-min-height);
 }
