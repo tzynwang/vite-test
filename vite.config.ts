@@ -7,6 +7,11 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [react()],
     base: env.VITE_BASE,
+    css: {
+      modules: {
+        generateScopedName: '[name]__[local]__[hash:base64:5]',
+      },
+    },
     server: {
       open: true,
       port: parseInt(env.VITE_SERVER_PORT) || 5173,
