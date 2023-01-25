@@ -28,7 +28,7 @@ function App(): React.ReactElement {
                 <li>首頁</li>
                 <li>技術筆記</li>
                 <li>技術小抄</li>
-                <li>肥宅獎盃</li>
+                <li>肥宅圖書館</li>
               </ul>
               <ul className={cn(scopedStyles.nav_ul)}>
                 <li>gitHub</li>
@@ -41,7 +41,7 @@ function App(): React.ReactElement {
           {/* about */}
           <h2>關於我</h2>
           <section>
-            我是查理，一個喜歡看書跟打電動的前端工程師。技術筆記區專門保存工作相關的筆記，小抄則是收集一些有點難成篇、但我常複製貼上的東西。如果想知道我喜歡哪些小說或遊戲，請參考肥宅獎杯列表，平安喜樂。
+            我是查理，一個喜歡看書跟打電動的前端工程師。技術筆記區專門保存工作相關的筆記，小抄則是收集一些尚未茁壯成篇、但我常複製貼上的東西。而如果想知道我喜歡哪些小說或遊戲，請參考肥宅圖書館，平安喜樂。
           </section>
 
           {/* posts list */}
@@ -69,23 +69,14 @@ function App(): React.ReactElement {
                 {Array.from(Array(10).keys()).map((num) => (
                   <li key={num}>post {num + 1}</li>
                 ))}
+                <li>更舊的筆記請洽技術筆記區</li>
               </ul>
             </div>
           </section>
 
-          {/* posts filter */}
-          <h2>想看舊筆記？</h2>
-          <section>
-            <ul>
-              <li>根據主題瀏覽</li>
-              <li>用關鍵字搜尋</li>
-              <li>或是這邊有根據時間降冪排序的全部文章</li>
-            </ul>
-          </section>
-
           {/* footer */}
           <footer>
-            <div>© {new Date().getFullYear()} Tzu Yin Wang 🦊 MIT</div>
+            <div>© {new Date().getFullYear()} Tzu Yin Wang 🦊 Made in Taiwan</div>
           </footer>
         </CssVarsProvider>
       </ThemeProvider>
