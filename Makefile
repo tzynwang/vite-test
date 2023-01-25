@@ -23,7 +23,7 @@ clean:
 # deploy build result to gitHub repo as branch "gh-pages"
 .PHONY: deploy
 deploy:
-	npm run build && \
+	make build && \
 	cd $(BUILD_OUTPUT) && \
 	git init && \
 	git remote -v | grep -w origin || git remote add origin git@github.com:tzynwang/vite-test.git && \
