@@ -13,3 +13,9 @@
   align-items: center;
   gap: 16px;
 }
+
+:local(.nav_ul) :local(li) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
