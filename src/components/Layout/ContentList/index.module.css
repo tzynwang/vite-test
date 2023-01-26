@@ -1,0 +1,8 @@
+:local(.PostList_container) {
+  display: block;
+}
+
+:local(.PostList_container_up_sm) {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+}
