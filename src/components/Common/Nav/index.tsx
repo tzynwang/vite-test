@@ -2,6 +2,9 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
+import { ReactComponent as GitHubIcon } from '@/assets/github-mark.svg';
+import { ReactComponent as RssFeedIcon } from '@/assets/rss_feed_black_24dp.svg';
+import { ReactComponent as ModeDarkIcon } from '@/assets/dark_mode_black_24dp.svg';
 import theme, { useMediaQuery } from '@/themes';
 import useI18n from '@/hooks/useI18n';
 import useUrlPath from '@/hooks/useUrlPath';
@@ -42,9 +45,15 @@ function Footer(): React.ReactElement {
             </li>
           </ul>
           <ul className={cn(scopedStyles.nav_ul)}>
-            <li>gitHub</li>
-            <li>rss feed</li>
-            <li>theme</li>
+            <li>
+              <GitHubIcon width={24} height={24} />
+            </li>
+            <li>
+              <RssFeedIcon width={24} height={24} />
+            </li>
+            <li>
+              <ModeDarkIcon width={24} height={24} />
+            </li>
           </ul>
         </div>
       </Container>
