@@ -2,9 +2,9 @@ import React, { memo, useMemo } from 'react';
 import cn from 'classnames';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import Footer from './components/Footer';
-import Nav from './components/Nav';
-import theme, { ThemeProvider, useMediaQuery } from './theme';
+import Footer from '@/components/Footer';
+import Nav from '@/components/Nav';
+import theme, { ThemeProvider, useMediaQuery } from '@/theme';
 import scopedStyles from './App.module.css';
 
 function App(): React.ReactElement {
