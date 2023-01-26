@@ -1,12 +1,17 @@
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import theme, { useMediaQuery } from '@/theme';
+import useUrlPath from '@/hooks/useUrlPath';
 import scopedStyles from './index.module.css';
 
 function Footer(): React.ReactElement {
   /* States */
   const breakpointsUpSm = useMediaQuery(theme.breakpoints.up('sm'));
+
+  /* Data */
+  const paths = useUrlPath();
 
   /* Main */
   return (
@@ -21,10 +26,18 @@ function Footer(): React.ReactElement {
           )}
         >
           <ul className={cn(scopedStyles.nav_ul)}>
-            <li>首頁</li>
-            <li>技術筆記</li>
-            <li>技術小抄</li>
-            <li>肥宅圖書館</li>
+            <li>
+              <Link to={paths.home}>首頁</Link>
+            </li>
+            <li>
+              <Link to={paths.techBlog}>技術筆記</Link>
+            </li>
+            <li>
+              <Link to={paths.snippet}>技術小抄</Link>
+            </li>
+            <li>
+              <Link to={paths.blog}>肥宅圖書館</Link>
+            </li>
           </ul>
           <ul className={cn(scopedStyles.nav_ul)}>
             <li>gitHub</li>
