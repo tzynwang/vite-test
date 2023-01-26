@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
-import theme, { useMediaQuery } from '@/theme';
+import theme, { useMediaQuery } from '@/themes';
 import usePageSecondTitle from '@/hooks/usePageSecondTitle';
 import scopedStyles from './index.module.css';
 import type { PostListProps } from './types';

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
-import theme, { useMediaQuery } from '@/theme';
+import theme, { useMediaQuery } from '@/themes';
 import useUrlPath from '@/hooks/useUrlPath';
 import scopedStyles from './index.module.css';
 

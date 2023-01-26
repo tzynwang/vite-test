@@ -6,7 +6,7 @@ import TechBlog from '@/components/Page/TechBlog';
 import Snippet from '@/components/Page/Snippet';
 import Blog from '@/components/Page/Blog';
 import Nav from '@/components/Common/Nav';
-import theme, { ThemeProvider } from '@/theme';
+import theme, { ThemeProvider } from '@/themes';
 import useUrlPath from '@/hooks/useUrlPath';
 
 function App(): React.ReactElement {

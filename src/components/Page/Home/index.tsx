@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Footer from '@/components/Common/Footer';
-import theme, { useMediaQuery } from '@/theme';
+import theme, { useMediaQuery } from '@/themes';
 import scopedStyles from './index.module.css';
 
 function Home(): React.ReactElement {
