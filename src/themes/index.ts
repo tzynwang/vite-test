@@ -10,6 +10,14 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
   },
+  typography: {
+    h1: {
+      fontSize: '3.5rem',
+    },
+    h2: {
+      fontSize: '2.75rem',
+    },
+  },
 });
 
 export default theme;

@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import useI18n from '@/hooks/useI18n';
 import { useReplaceToString } from '@/hooks/useStringReplacement';
 
@@ -15,7 +16,11 @@ function Footer(): React.ReactElement {
   /* Main */
   return (
     <footer>
-      <Container>{footerDescription}</Container>
+      <Container>
+        <Typography variant="body1" align="center">
+          {footerDescription}
+        </Typography>
+      </Container>
     </footer>
   );
 }

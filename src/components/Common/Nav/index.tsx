@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import { ReactComponent as ModeDarkIcon } from '@/assets/dark_mode_black_24dp.svg';
 import theme, { useMediaQuery } from '@/themes';
 import useI18n from '@/hooks/useI18n';
@@ -20,7 +21,7 @@ function Footer(): React.ReactElement {
   return (
     <nav>
       <Container>
-        <h1>{i18n.t('frontend.global.title.siteTitle')}</h1>
+        <Typography variant="h1">{i18n.t('frontend.global.title.siteTitle')}</Typography>
         <div
           className={cn(
             breakpointsUpSm

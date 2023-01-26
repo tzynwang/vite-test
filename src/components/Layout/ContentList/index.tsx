@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import theme, { useMediaQuery } from '@/themes';
 import usePageSecondTitle from '@/hooks/usePageSecondTitle';
 import scopedStyles from './index.module.css';
@@ -15,7 +16,7 @@ function ContentList(props: PostListProps): React.ReactElement {
   /* Main */
   return (
     <Container>
-      <h2>{secondTitle}</h2>
+      <Typography variant="h2">{secondTitle}</Typography>
       <div
         className={cn(
           breakpointsUpSm

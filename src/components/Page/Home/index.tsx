@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import Footer from '@/components/Common/Footer';
 import theme, { useMediaQuery } from '@/themes';
 import useI18n from '@/hooks/useI18n';
@@ -64,15 +65,21 @@ function Home(): React.ReactElement {
       {/* about */}
       <section>
         <Container>
-          <h2>{i18n.t('frontend.homePage.about.secondTitle')}</h2>
-          <p>{i18n.t('frontend.homePage.about.description')}</p>
+          <Typography variant="h2">
+            {i18n.t('frontend.homePage.about.secondTitle')}
+          </Typography>
+          <Typography variant="body1">
+            {i18n.t('frontend.homePage.about.description')}
+          </Typography>
         </Container>
       </section>
 
       {/* posts list */}
       <section>
         <Container>
-          <h2>{i18n.t('frontend.homePage.latestPosts.secondTitle')}</h2>
+          <Typography variant="h2">
+            {i18n.t('frontend.homePage.latestPosts.secondTitle')}
+          </Typography>
         </Container>
         {LatestPostsBlock}
         <Container>
@@ -80,7 +87,9 @@ function Home(): React.ReactElement {
             {Array.from(Array(5).keys()).map((num) => (
               <li key={num}>post {num + 4}</li>
             ))}
-            <li>{MorePosts}</li>
+            <li>
+              <Typography variant="body1">{MorePosts}</Typography>
+            </li>
           </ul>
         </Container>
       </section>
