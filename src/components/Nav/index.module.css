@@ -1,0 +1,15 @@
+:local(.nav_ul_container) {
+  display: block;
+}
+
+:local(.nav_ul_container_up_sm) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:local(.nav_ul) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
