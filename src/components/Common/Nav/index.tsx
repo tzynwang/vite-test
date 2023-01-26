@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import theme, { useMediaQuery } from '@/themes';
+import useI18n from '@/hooks/useI18n';
 import useUrlPath from '@/hooks/useUrlPath';
 import scopedStyles from './index.module.css';
 
 function Footer(): React.ReactElement {
   /* States */
   const breakpointsUpSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const i18n = useI18n();
 
   /* Data */
   const paths = useUrlPath();
@@ -17,7 +19,7 @@ function Footer(): React.ReactElement {
   return (
     <nav>
       <Container>
-        <h1>普通文組</h1>
+        <h1>{i18n.t('frontend.global.title.siteTitle')}</h1>
         <div
           className={cn(
             breakpointsUpSm
@@ -27,16 +29,16 @@ function Footer(): React.ReactElement {
         >
           <ul className={cn(scopedStyles.nav_ul)}>
             <li>
-              <Link to={paths.home}>首頁</Link>
+              <Link to={paths.home}>{i18n.t('frontend.nav.homePage')}</Link>
             </li>
             <li>
-              <Link to={paths.techBlog}>技術筆記</Link>
+              <Link to={paths.techBlog}>{i18n.t('frontend.nav.techBlog')}</Link>
             </li>
             <li>
-              <Link to={paths.snippet}>技術小抄</Link>
+              <Link to={paths.snippet}>{i18n.t('frontend.nav.snippet')}</Link>
             </li>
             <li>
-              <Link to={paths.blog}>肥宅圖書館</Link>
+              <Link to={paths.blog}>{i18n.t('frontend.nav.blog')}</Link>
             </li>
           </ul>
           <ul className={cn(scopedStyles.nav_ul)}>

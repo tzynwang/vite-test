@@ -1,13 +1,19 @@
 import React, { memo, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Footer from '@/components/Common/Footer';
 import theme, { useMediaQuery } from '@/themes';
+import useI18n from '@/hooks/useI18n';
+import { useReplaceToNode } from '@/hooks/useStringReplacement';
+import useUrlPath from '@/hooks/useUrlPath';
 import scopedStyles from './index.module.css';
 
 function Home(): React.ReactElement {
   /* States */
   const breakpointsUpSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const i18n = useI18n();
+  const path = useUrlPath();
 
   /* Views */
   const LatestPostsBlock = useMemo(
@@ -47,6 +53,10 @@ function Home(): React.ReactElement {
     ),
     [breakpointsUpSm]
   );
+  const MorePosts = useReplaceToNode(
+    i18n.t('frontend.homePage.latestPosts.morePosts'),
+    [<Link to={path.techBlog}>{i18n.t('frontend.nav.techBlog')}</Link>]
+  );
 
   /* Main */
   return (
@@ -54,17 +64,15 @@ function Home(): React.ReactElement {
       {/* about */}
       <section>
         <Container>
-          <h2>關於我</h2>
-          <div>
-            我是查理，一個喜歡看書跟打電動的前端工程師。技術筆記區專門保存工作相關的筆記，小抄則是收集那些內容長度不足成文，但我常複製貼上的東西。而如果想知道我喜歡哪些小說或遊戲，請參考肥宅圖書館，平安喜樂。
-          </div>
+          <h2>{i18n.t('frontend.homePage.about.secondTitle')}</h2>
+          <p>{i18n.t('frontend.homePage.about.description')}</p>
         </Container>
       </section>
 
       {/* posts list */}
       <section>
         <Container>
-          <h2>最近更新的技術筆記</h2>
+          <h2>{i18n.t('frontend.homePage.latestPosts.secondTitle')}</h2>
         </Container>
         {LatestPostsBlock}
         <Container>
@@ -72,7 +80,7 @@ function Home(): React.ReactElement {
             {Array.from(Array(5).keys()).map((num) => (
               <li key={num}>post {num + 4}</li>
             ))}
-            <li>更舊的筆記請洽技術筆記區</li>
+            <li>{MorePosts}</li>
           </ul>
         </Container>
       </section>
