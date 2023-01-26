@@ -1,8 +1,10 @@
 import React, { memo, useMemo } from 'react';
+import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import useI18n from '@/hooks/useI18n';
 import { useReplaceToString } from '@/hooks/useStringReplacement';
+import scopedStyles from './index.module.css';
 
 function Footer(): React.ReactElement {
   /* States */
@@ -16,10 +18,8 @@ function Footer(): React.ReactElement {
   /* Main */
   return (
     <footer>
-      <Container>
-        <Typography variant="body1" align="center">
-          {footerDescription}
-        </Typography>
+      <Container className={cn(scopedStyles.footer_description)}>
+        <Typography variant="body1">{footerDescription}</Typography>
       </Container>
     </footer>
   );

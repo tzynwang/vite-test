@@ -1,7 +1,7 @@
 import {
   ThemeProvider,
   createTheme,
-  Experimental_CssVarsProvider as CssVarsProvider,
+  StyledEngineProvider,
 } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -12,9 +12,11 @@ const theme = createTheme({
   },
   typography: {
     h1: {
+      margin: '1.25rem auto',
       fontSize: '3.5rem',
     },
     h2: {
+      margin: '1rem auto',
       fontSize: '2.75rem',
     },
   },
@@ -22,6 +24,6 @@ const theme = createTheme({
 
 export default theme;
 
-export { ThemeProvider, CssVarsProvider, useMediaQuery };
+export { ThemeProvider, StyledEngineProvider, useMediaQuery };
 
 export type { Theme };

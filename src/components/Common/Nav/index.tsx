@@ -21,7 +21,9 @@ function Footer(): React.ReactElement {
   return (
     <nav>
       <Container>
-        <Typography variant="h1">{i18n.t('frontend.global.title.siteTitle')}</Typography>
+        <Typography variant="h1">
+          {i18n.t('frontend.global.title.siteTitle')}
+        </Typography>
         <div
           className={cn(
             breakpointsUpSm

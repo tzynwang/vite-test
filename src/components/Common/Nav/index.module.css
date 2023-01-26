@@ -1,9 +1,12 @@
 :local(.nav_ul_container) {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 :local(.nav_ul_container_up_sm) {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
