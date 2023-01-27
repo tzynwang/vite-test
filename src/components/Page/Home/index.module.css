@@ -14,10 +14,7 @@
 :local(.main_section_main_up_sm) {
   display: grid;
   grid-template-columns: 4fr 3fr;
-  grid-template-rows: repeat(
-    2,
-    clamp(var(--post-min-height), 20vh, auto)
-  );
+  grid-template-rows: repeat(2, clamp(var(--post-min-height), 20vh, auto));
   grid-template-areas: 'latest second' 'latest third';
 }
 
@@ -39,8 +36,9 @@
   display: flex;
 }
 
-:local(.blog_post) {
+:local(.PostListItem_container) {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  gap: 16px;
+  padding: 16px 0;
 }

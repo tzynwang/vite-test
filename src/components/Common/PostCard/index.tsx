@@ -8,8 +8,8 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 import debounce from 'lodash/debounce';
-import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
+import useGetPostCategoryChip from '@/hooks/useGetPostCategoryChip';
 import { POST_CARD_DIMENSION_RATIO } from '@/models/GeneralModels';
 import scopedStyles from './index.module.css';
 import type { PostCardProps } from './types';
@@ -26,6 +26,7 @@ function PostCard(props: PostCardProps): React.ReactElement {
   const [containerRatio, setContainerRatio] =
     useState<POST_CARD_CONTAINER_RATIO>(POST_CARD_CONTAINER_RATIO.DEFAULT);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const PostCategoryChips = useGetPostCategoryChip(postCategories);
 
   /* Data */
   const containerStyle = useMemo(() => {
@@ -79,9 +80,7 @@ function PostCard(props: PostCardProps): React.ReactElement {
                 {postDate}
               </Typography>
               <div className={cn(scopedStyles.category_container)}>
-                {postCategories.map((category, index) => (
-                  <Chip key={index} label={category} color="primary" />
-                ))}
+                {PostCategoryChips}
               </div>
             </div>
           </React.Fragment>
@@ -97,16 +96,14 @@ function PostCard(props: PostCardProps): React.ReactElement {
               {postDate}
             </Typography>
             <div className={cn(scopedStyles.category_container)}>
-              {postCategories.map((category, index) => (
-                <Chip key={index} label={category} color="primary" />
-              ))}
+              {PostCategoryChips}
             </div>
           </div>
         );
       default:
         return <React.Fragment />;
     }
-  }, [containerRatio, coverImage, postTitle, postDate, postCategories]);
+  }, [containerRatio, coverImage, postTitle, postDate]);
 
   /* Main */
   return (

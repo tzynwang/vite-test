@@ -22,3 +22,5 @@ export const MOCK_POST_TITLE_2 =
 export const MOCK_POST_CATEGORIES = ['MaterialUI', 'TypeScript'];
 
 export const MOCK_POST_DATE = new Date().toString();
+
+export const MOCK_POST_LISTS = Array.from(Array(5).keys());

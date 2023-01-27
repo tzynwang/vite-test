@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Footer from '@/components/Common/Footer';
 import PostCard from '@/components/Common/PostCard';
+import PostListItem from '@/components/Common/PostListItem';
 import useI18n from '@/hooks/useI18n';
 import { useReplaceToNode } from '@/hooks/useStringReplacement';
 import useUrlPath from '@/hooks/useUrlPath';
@@ -15,6 +16,7 @@ import {
   MOCK_POST_TITLE_2,
   MOCK_POST_DATE,
   MOCK_POST_CATEGORIES,
+  MOCK_POST_LISTS,
 } from '@/models/GeneralModels';
 import theme, { useMediaQuery } from '@/themes';
 import timeFormat from '@/tools/time-format';
@@ -93,9 +95,15 @@ function Home(): React.ReactElement {
         </Container>
         {LatestPostsBlock}
         <Container>
-          <ul>
-            {Array.from(Array(5).keys()).map((num) => (
-              <li key={num}>post {num + 4}</li>
+          <ul className={cn(scopedStyles.PostListItem_container)}>
+            {MOCK_POST_LISTS.map((num) => (
+              <li key={num}>
+                <PostListItem
+                  postDate={timeFormat(MOCK_POST_DATE)}
+                  postTitle={MOCK_POST_TITLE}
+                  postCategories={MOCK_POST_CATEGORIES}
+                />
+              </li>
             ))}
             <li>
               <Typography variant="body1">{MorePosts}</Typography>
