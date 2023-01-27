@@ -3,6 +3,10 @@
   --post-max-height: 360px;
 }
 
+:local(.description) {
+  white-space: pre-line;
+}
+
 :local(.main_section_main) {
   display: block;
 }
@@ -12,7 +16,7 @@
   grid-template-columns: 4fr 3fr;
   grid-template-rows: repeat(
     2,
-    clamp(var(--post-min-height), 20vh, var(--post-max-height))
+    clamp(var(--post-min-height), 20vh, auto)
   );
   grid-template-areas: 'latest second' 'latest third';
 }

@@ -19,6 +19,9 @@ const theme = createTheme({
       margin: '1rem auto',
       fontSize: '2.75rem',
     },
+    h3: {
+      fontSize: '2.25rem',
+    },
   },
 });
 

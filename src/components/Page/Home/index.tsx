@@ -4,10 +4,20 @@ import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Footer from '@/components/Common/Footer';
-import theme, { useMediaQuery } from '@/themes';
+import PostCard from '@/components/Common/PostCard';
 import useI18n from '@/hooks/useI18n';
 import { useReplaceToNode } from '@/hooks/useStringReplacement';
 import useUrlPath from '@/hooks/useUrlPath';
+import {
+  MOCK_COVER_IMAGE,
+  MOCK_POST_TITLE,
+  MOCK_POST_TITLE_1,
+  MOCK_POST_TITLE_2,
+  MOCK_POST_DATE,
+  MOCK_POST_CATEGORIES,
+} from '@/models/GeneralModels';
+import theme, { useMediaQuery } from '@/themes';
+import timeFormat from '@/tools/time-format';
 import scopedStyles from './index.module.css';
 
 function Home(): React.ReactElement {
@@ -27,28 +37,28 @@ function Home(): React.ReactElement {
         )}
       >
         <div className={cn(scopedStyles.main_section_main_latest)}>
-          <div
-            className={cn(scopedStyles.blog_post)}
-            style={{ backgroundColor: theme.palette.grey[200] }}
-          >
-            latest blog
-          </div>
+          <PostCard
+            coverImage={MOCK_COVER_IMAGE}
+            postTitle={MOCK_POST_TITLE}
+            postDate={timeFormat(MOCK_POST_DATE)}
+            postCategories={MOCK_POST_CATEGORIES}
+          />
         </div>
         <div className={cn(scopedStyles.main_section_main_second)}>
-          <div
-            className={cn(scopedStyles.blog_post)}
-            style={{ backgroundColor: theme.palette.grey[300] }}
-          >
-            2nd latest blog
-          </div>
+          <PostCard
+            coverImage={MOCK_COVER_IMAGE}
+            postTitle={MOCK_POST_TITLE_1}
+            postDate={timeFormat(MOCK_POST_DATE)}
+            postCategories={MOCK_POST_CATEGORIES}
+          />
         </div>
         <div className={cn(scopedStyles.main_section_main_third)}>
-          <div
-            className={cn(scopedStyles.blog_post)}
-            style={{ backgroundColor: theme.palette.grey[400] }}
-          >
-            3rd latest blog
-          </div>
+          <PostCard
+            coverImage={MOCK_COVER_IMAGE}
+            postTitle={MOCK_POST_TITLE_2}
+            postDate={timeFormat(MOCK_POST_DATE)}
+            postCategories={MOCK_POST_CATEGORIES}
+          />
         </div>
       </div>
     ),
@@ -68,7 +78,7 @@ function Home(): React.ReactElement {
           <Typography variant="h2">
             {i18n.t('frontend.homePage.about.secondTitle')}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" className={scopedStyles.description}>
             {i18n.t('frontend.homePage.about.description')}
           </Typography>
         </Container>
