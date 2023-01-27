@@ -10,7 +10,7 @@ import type { PostListProps } from './types';
 function ContentList(props: PostListProps): React.ReactElement {
   /* States */
   const { side, main } = props;
-  const breakpointsUpSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const breakpointsUpMd = useMediaQuery(theme.breakpoints.up('md'));
   const secondTitle = usePageSecondTitle();
 
   /* Main */
@@ -19,8 +19,8 @@ function ContentList(props: PostListProps): React.ReactElement {
       <Typography variant="h2">{secondTitle}</Typography>
       <div
         className={cn(
-          breakpointsUpSm
-            ? scopedStyles.PostList_container_up_sm
+          breakpointsUpMd
+            ? scopedStyles.PostList_container_up_md
             : scopedStyles.PostList_container
         )}
       >

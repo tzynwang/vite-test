@@ -1,3 +1,5 @@
+import type { CategoryCountPairs } from './GeneralTypes';
+
 /** 若 i18n.t 中帶有需要動態替換的內容，以此符號標註替換位置 */
 export const REPLACEMENT = `{$}`;
 
@@ -20,6 +22,11 @@ export const MOCK_POST_TITLE_2 =
   '鐵人賽 Modern Web 組「我們可以不要 component library 了嗎？」第 22 - 30 天';
 
 export const MOCK_POST_CATEGORIES = ['MaterialUI', 'TypeScript'];
+
+export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs = [
+  { categoryName: 'MaterialUI', count: 13 },
+  { categoryName: 'TypeScript', count: 30 },
+];
 
 export const MOCK_POST_DATE = new Date().toString();
 

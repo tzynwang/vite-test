@@ -1,0 +1,12 @@
+:local(.container) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+:local(.item) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

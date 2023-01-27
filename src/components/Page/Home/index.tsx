@@ -5,7 +5,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Footer from '@/components/Common/Footer';
 import PostCard from '@/components/Common/PostCard';
-import PostListItem from '@/components/Common/PostListItem';
+import PostListContainer from '@/components/Layout/PostListContainer';
+import useGetPostList from '@/hooks/useGetPostList';
 import useI18n from '@/hooks/useI18n';
 import { useReplaceToNode } from '@/hooks/useStringReplacement';
 import useUrlPath from '@/hooks/useUrlPath';
@@ -66,6 +67,7 @@ function Home(): React.ReactElement {
     ),
     [breakpointsUpSm]
   );
+  const PostsList = useGetPostList(MOCK_POST_LISTS);
   const MorePosts = useReplaceToNode(
     i18n.t('frontend.homePage.latestPosts.morePosts'),
     [<Link to={path.techBlog}>{i18n.t('frontend.nav.techBlog')}</Link>]
@@ -95,20 +97,12 @@ function Home(): React.ReactElement {
         </Container>
         {LatestPostsBlock}
         <Container>
-          <ul className={cn(scopedStyles.PostListItem_container)}>
-            {MOCK_POST_LISTS.map((num) => (
-              <li key={num}>
-                <PostListItem
-                  postDate={timeFormat(MOCK_POST_DATE)}
-                  postTitle={MOCK_POST_TITLE}
-                  postCategories={MOCK_POST_CATEGORIES}
-                />
-              </li>
-            ))}
+          <PostListContainer>
+            {PostsList}
             <li>
               <Typography variant="body1">{MorePosts}</Typography>
             </li>
-          </ul>
+          </PostListContainer>
         </Container>
       </section>
 
