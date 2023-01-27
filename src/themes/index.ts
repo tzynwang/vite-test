@@ -12,11 +12,11 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      margin: '1.25rem auto',
+      padding: '1.25rem 0',
       fontSize: '3.5rem',
     },
     h2: {
-      margin: '1rem auto',
+      padding: '1rem 0',
       fontSize: '2.75rem',
     },
     h3: {
