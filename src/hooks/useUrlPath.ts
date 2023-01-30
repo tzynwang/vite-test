@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { ROUTE } from '@/models/GeneralModels';
 
 export default function useUrlPath() {
   /* Data */
@@ -6,9 +7,10 @@ export default function useUrlPath() {
 
   /* Main */
   return {
-    home: `${urlPrefix}/`,
-    techBlog: `${urlPrefix}/archive`,
-    snippet: `${urlPrefix}/snippet`,
-    blog: `${urlPrefix}/bookshelf`,
+    home: `${urlPrefix}${ROUTE.HOME}`,
+    techBlog: `${urlPrefix}${ROUTE.TECH_BLOG}`,
+    techBlogCategory: `${urlPrefix}${ROUTE.TECH_BLOG_CATEGORY}`,
+    snippet: `${urlPrefix}${ROUTE.SNIPPET}`,
+    blog: `${urlPrefix}${ROUTE.BLOG}`,
   };
 }

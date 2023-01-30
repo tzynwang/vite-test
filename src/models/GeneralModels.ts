@@ -9,6 +9,14 @@ export const POST_CARD_DIMENSION_RATIO = 1.75;
 /** 設定 dayjs().format() 的日期格式 */
 export const DATE_TIME_FORMAT = 'YYYY-MM-DD';
 
+export enum ROUTE {
+  HOME = '/',
+  TECH_BLOG = '/archive',
+  TECH_BLOG_CATEGORY = '/category',
+  SNIPPET = '/snippet',
+  BLOG = '/bookshelf',
+}
+
 export const MOCK_COVER_IMAGE =
   'linear-gradient(45deg, rgba(120,119,126,1) 0%, rgba(112,112,177,1) 35%, rgba(143,196,207,1) 100%)';
 
