@@ -4,3 +4,7 @@ export interface CategoryCountPair {
 }
 
 export type CategoryCountPairs = CategoryCountPair[];
+
+export interface ParamsCategory {
+  category: string;
+}

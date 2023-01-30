@@ -12,7 +12,7 @@ export const DATE_TIME_FORMAT = 'YYYY-MM-DD';
 export enum ROUTE {
   HOME = '/',
   TECH_BLOG = '/archive',
-  TECH_BLOG_CATEGORY = '/category',
+  TECH_BLOG_CATEGORY = '/category/:category',
   SNIPPET = '/snippet',
   BLOG = '/bookshelf',
 }
@@ -21,20 +21,21 @@ export const MOCK_COVER_IMAGE =
   'linear-gradient(45deg, rgba(120,119,126,1) 0%, rgba(112,112,177,1) 35%, rgba(143,196,207,1) 100%)';
 
 export const MOCK_POST_TITLE =
-  '透過 compositionstart、compositionend 來暫停驗證輸入內容';
+  '(MOCK) 透過 compositionstart、compositionend 來暫停驗證輸入內容';
 
 export const MOCK_POST_TITLE_1 =
-  'Dialogs, modality and popovers seem similar. How are they different?';
+  '(MOCK) Dialogs, modality and popovers seem similar. How are they different?';
 
 export const MOCK_POST_TITLE_2 =
-  '鐵人賽 Modern Web 組「我們可以不要 component library 了嗎？」第 22 - 30 天';
+  '(MOCK) 鐵人賽 Modern Web 組「我們可以不要 component library 了嗎？」第 22 - 30 天';
 
-export const MOCK_POST_CATEGORIES = ['MaterialUI', 'TypeScript'];
+export const MOCK_POST_CATEGORIES = ['(MOCK) MaterialUI', '(MOCK) TypeScript'];
 
-export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs = [
-  { categoryName: 'MaterialUI', count: 13 },
-  { categoryName: 'TypeScript', count: 30 },
-];
+export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
+  MOCK_POST_CATEGORIES.map((categoryName, index) => ({
+    categoryName,
+    count: index + 7,
+  }));
 
 export const MOCK_POST_DATE = new Date().toString();
 
