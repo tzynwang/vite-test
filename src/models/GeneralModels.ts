@@ -13,6 +13,7 @@ export enum ROUTE {
   HOME = '/',
   TECH_BLOG = '/archive',
   TECH_BLOG_CATEGORY = '/category/:category',
+  TECH_BLOG_SINGLE_POST = '/:year/:postTitle',
   SNIPPET = '/snippet',
   BLOG = '/bookshelf',
 }
@@ -40,5 +41,3 @@ export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
 export const MOCK_POST_DATE = new Date().toString();
 
 export const MOCK_POST_LISTS = Array.from(Array(5).keys());
-
-export const MOCK_POST_URL = `/${new Date().getFullYear()}/mock-post-url`;

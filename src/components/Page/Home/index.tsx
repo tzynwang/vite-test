@@ -18,7 +18,6 @@ import {
   MOCK_POST_DATE,
   MOCK_POST_CATEGORIES,
   MOCK_POST_LISTS,
-  MOCK_POST_URL,
 } from '@/models/GeneralModels';
 import theme, { useMediaQuery } from '@/themes';
 import timeFormat from '@/tools/time-format';
@@ -46,7 +45,7 @@ function Home(): React.ReactElement {
             postTitle={MOCK_POST_TITLE}
             postDate={timeFormat(MOCK_POST_DATE)}
             postCategories={MOCK_POST_CATEGORIES}
-            postUrl={MOCK_POST_URL}
+            postUrl={path.techBlogSinglePost}
           />
         </div>
         <div className={cn(scopedStyles.main_section_main_second)}>
@@ -55,7 +54,7 @@ function Home(): React.ReactElement {
             postTitle={MOCK_POST_TITLE_1}
             postDate={timeFormat(MOCK_POST_DATE)}
             postCategories={MOCK_POST_CATEGORIES}
-            postUrl={MOCK_POST_URL}
+            postUrl={path.techBlogSinglePost}
           />
         </div>
         <div className={cn(scopedStyles.main_section_main_third)}>
@@ -64,12 +63,12 @@ function Home(): React.ReactElement {
             postTitle={MOCK_POST_TITLE_2}
             postDate={timeFormat(MOCK_POST_DATE)}
             postCategories={MOCK_POST_CATEGORIES}
-            postUrl={MOCK_POST_URL}
+            postUrl={path.techBlogSinglePost}
           />
         </div>
       </div>
     ),
-    [breakpointsUpSm]
+    [breakpointsUpSm, path.techBlogSinglePost]
   );
   const PostsList = useGetPostList(MOCK_POST_LISTS);
   const MorePosts = useReplaceToNode(
