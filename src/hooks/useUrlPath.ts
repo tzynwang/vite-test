@@ -3,7 +3,7 @@ import { ROUTE } from '@/models/GeneralModels';
 
 export default function useUrlPath() {
   /* Data */
-  const urlPrefix = useMemo(() => import.meta.env.VITE_BASE, []);
+  const urlPrefix = useMemo(() => import.meta.env.BASE_URL, []);
 
   /* Main */
   return {
