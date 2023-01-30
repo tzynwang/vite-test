@@ -29,7 +29,7 @@ export const MOCK_POST_TITLE_1 =
 export const MOCK_POST_TITLE_2 =
   '(MOCK) 鐵人賽 Modern Web 組「我們可以不要 component library 了嗎？」第 22 - 30 天';
 
-export const MOCK_POST_CATEGORIES = ['(MOCK) MaterialUI', '(MOCK) TypeScript'];
+export const MOCK_POST_CATEGORIES = ['MOCK_MaterialUI', 'MOCK_TypeScript'];
 
 export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
   MOCK_POST_CATEGORIES.map((categoryName, index) => ({
