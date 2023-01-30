@@ -21,17 +21,17 @@ function App(): React.ReactElement {
         <ThemeProvider theme={theme}>
           <Nav />
           <Switch>
-            <Route path={paths.home}>
-              <Home />
-            </Route>
-            <Route path={paths.blog}>
-              <Blog />
+            <Route path={paths.techBlog}>
+              <TechBlog />
             </Route>
             <Route path={paths.snippet}>
               <Snippet />
             </Route>
-            <Route path={paths.techBlog}>
-              <TechBlog />
+            <Route path={paths.blog}>
+              <Blog />
+            </Route>
+            <Route path={paths.home}>
+              <Home />
             </Route>
           </Switch>
         </ThemeProvider>

@@ -6,9 +6,9 @@ export default function useUrlPath() {
 
   /* Main */
   return {
-    home: `${urlPrefix}/home`,
-    techBlog: `${urlPrefix}/`,
+    home: `${urlPrefix}/`,
+    techBlog: `${urlPrefix}/archive`,
     snippet: `${urlPrefix}/snippet`,
-    blog: `${urlPrefix}/blog`,
+    blog: `${urlPrefix}/bookshelf`,
   };
 }
