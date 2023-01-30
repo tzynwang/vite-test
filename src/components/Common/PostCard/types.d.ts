@@ -3,4 +3,5 @@ export interface PostCardProps {
   postTitle: string;
   postDate: string;
   postCategories: string[];
+  postUrl: string;
 }

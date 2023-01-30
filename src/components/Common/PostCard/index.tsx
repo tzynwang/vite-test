@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import debounce from 'lodash/debounce';
 import Typography from '@mui/material/Typography';
@@ -22,7 +23,7 @@ enum POST_CARD_CONTAINER_RATIO {
 
 function PostCard(props: PostCardProps): React.ReactElement {
   /* States */
-  const { coverImage, postTitle, postDate, postCategories } = props;
+  const { coverImage, postTitle, postDate, postCategories, postUrl } = props;
   const [containerRatio, setContainerRatio] =
     useState<POST_CARD_CONTAINER_RATIO>(POST_CARD_CONTAINER_RATIO.DEFAULT);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -72,7 +73,9 @@ function PostCard(props: PostCardProps): React.ReactElement {
               style={{ backgroundImage: coverImage }}
             />
             <div className={cn(scopedStyles.post_text)}>
-              <Typography variant="h3">{postTitle}</Typography>
+              <Link to={postUrl}>
+                <Typography variant="h3">{postTitle}</Typography>
+              </Link>
               <Typography
                 variant="body1"
                 className={cn(scopedStyles.post_date)}
@@ -91,7 +94,9 @@ function PostCard(props: PostCardProps): React.ReactElement {
             className={cn(scopedStyles.post_image)}
             style={{ backgroundImage: coverImage }}
           >
-            <Typography variant="h3">{postTitle}</Typography>
+            <Link to={postUrl}>
+              <Typography variant="h3">{postTitle}</Typography>
+            </Link>
             <Typography variant="body1" className={cn(scopedStyles.post_date)}>
               {postDate}
             </Typography>
@@ -103,7 +108,7 @@ function PostCard(props: PostCardProps): React.ReactElement {
       default:
         return <React.Fragment />;
     }
-  }, [containerRatio, coverImage, postTitle, postDate]);
+  }, [containerRatio, coverImage, postTitle, postDate, postUrl]);
 
   /* Main */
   return (

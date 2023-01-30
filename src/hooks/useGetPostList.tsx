@@ -3,6 +3,7 @@ import {
   MOCK_POST_TITLE,
   MOCK_POST_DATE,
   MOCK_POST_CATEGORIES,
+  MOCK_POST_URL,
 } from '@/models/GeneralModels';
 import timeFormat from '@/tools/time-format';
 
@@ -15,6 +16,7 @@ export default function useGetPostList<T>(lists: T[]) {
         postDate={timeFormat(MOCK_POST_DATE)}
         postTitle={MOCK_POST_TITLE}
         postCategories={MOCK_POST_CATEGORIES}
+        postUrl={MOCK_POST_URL}
       />
     </li>
   ));

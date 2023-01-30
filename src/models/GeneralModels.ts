@@ -40,3 +40,5 @@ export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
 export const MOCK_POST_DATE = new Date().toString();
 
 export const MOCK_POST_LISTS = Array.from(Array(5).keys());
+
+export const MOCK_POST_URL = `/${new Date().getFullYear()}/mock-post-url`;
