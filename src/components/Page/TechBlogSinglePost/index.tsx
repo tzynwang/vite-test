@@ -41,7 +41,7 @@ function TechBlogSinglePost(): React.ReactElement {
         </div>
       }
       main={
-        <div className={cn(scopedStyles.main_wrapper)}>
+        <div className={cn(breakpointsUpMd && scopedStyles.main_wrapper_up_md)}>
           <Typography variant="h2" className={cn(scopedStyles.post_title)}>
             post title
           </Typography>

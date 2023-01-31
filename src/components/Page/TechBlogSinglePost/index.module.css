@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-:local(.main_wrapper) {
+:local(.main_wrapper_up_md) {
   padding-bottom: 32px;
 }
 
