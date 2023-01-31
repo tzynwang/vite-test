@@ -4,6 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Home from '@/components/Page/Home';
 import TechBlog from '@/components/Page/TechBlog';
 import TechBlogCategory from '@/components/Page/TechBlogCategory';
+import TechBlogSinglePost from '@/components/Page/TechBlogSinglePost';
 import Snippet from '@/components/Page/Snippet';
 import Blog from '@/components/Page/Blog';
 import Nav from '@/components/Common/Nav';
@@ -27,6 +28,9 @@ function App(): React.ReactElement {
             </Route>
             <Route path={paths.techBlogCategory}>
               <TechBlogCategory />
+            </Route>
+            <Route path={paths.techBlogSinglePost}>
+              <TechBlogSinglePost />
             </Route>
             <Route path={paths.snippet}>
               <Snippet />

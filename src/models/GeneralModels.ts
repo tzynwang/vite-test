@@ -1,4 +1,8 @@
-import type { CategoryCountPairs } from './GeneralTypes';
+import type {
+  CategoryCountPairs,
+  SeriesPosts,
+  TableOfContents,
+} from './GeneralTypes';
 
 /** 若 i18n.t 中帶有需要動態替換的內容，以此符號標註替換位置 */
 export const REPLACEMENT = `{$}`;
@@ -41,3 +45,17 @@ export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
 export const MOCK_POST_DATE = new Date().toString();
 
 export const MOCK_POST_LISTS = Array.from(Array(5).keys());
+
+export const MOCK_SERIES_POSTS: SeriesPosts = Array.from(Array(4).keys()).map(
+  () => ({
+    postUrl: ROUTE.TECH_BLOG_SINGLE_POST,
+    postTitle: MOCK_POST_TITLE_2,
+  })
+);
+
+export const MOCK_TABLE_OF_CONTENTS: TableOfContents = Array.from(
+  Array(4).keys()
+).map((num) => ({
+  to: `SUB_TITLE_ANCHOR_${num}`,
+  postSubTitle: `POST_SUB_TITLE_${num}`,
+}));

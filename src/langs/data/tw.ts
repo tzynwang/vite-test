@@ -21,6 +21,10 @@ const tw = {
   'frontend.homePage.latestPosts.morePosts': `更舊的筆記請洽 ${REPLACEMENT} 區`,
 
   'frontend.footer.copyRight': `© ${REPLACEMENT} Tzu Yin Wang 🦊 Made in Taiwan`,
+
+  'frontend.techBlogSinglePost.toc': '目錄',
+  'frontend.techBlogSinglePost.seriesPost': '系列文',
+  'frontend.techBlogSinglePost.category': '類別',
 };
 
 export default tw;
