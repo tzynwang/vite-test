@@ -8,6 +8,7 @@ html,
 body,
 #root {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -23,6 +24,7 @@ a:active {
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: text-decoration-color 0.2s ease;
+  cursor: pointer;
 }
 
 a:hover {
