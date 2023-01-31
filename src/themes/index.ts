@@ -1,3 +1,4 @@
+import { makeStyles } from '@mui/styles';
 import {
   ThemeProvider,
   createTheme,
@@ -32,6 +33,6 @@ const theme = createTheme({
 
 export default theme;
 
-export { ThemeProvider, StyledEngineProvider, useMediaQuery };
+export { ThemeProvider, StyledEngineProvider, useMediaQuery, makeStyles };
 
 export type { Theme };

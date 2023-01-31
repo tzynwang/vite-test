@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
+import BackToTop from '@/components/Common/TechBlogSinglePost/BackToTop';
 import theme, { useMediaQuery } from '@/themes';
 import scopedStyles from './index.module.css';
 import type { PostListProps } from './types';
@@ -21,6 +22,7 @@ function TechBlogSinglePostLayout(props: PostListProps): React.ReactElement {
         <section>{side}</section>
         <section>{main}</section>
       </div>
+      <BackToTop />
     </Container>
   );
 }
