@@ -1,7 +1,9 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import Typography from '@mui/material/Typography';
 import useI18n from '@/hooks/useI18n';
+import scopedStyles from './index.module.css';
 import type { SeriesPostsProps } from './types';
 
 function SeriesPosts(props: SeriesPostsProps): React.ReactElement {
@@ -15,7 +17,7 @@ function SeriesPosts(props: SeriesPostsProps): React.ReactElement {
       <Typography variant="h4" component="p">
         {i18n.t('frontend.techBlogSinglePost.seriesPost')}
       </Typography>
-      <ul>
+      <ul className={cn(scopedStyles.posts_container)}>
         {seriesPosts.map((post, index) => (
           <li key={index}>
             <Link to={post.postUrl}>{post.postTitle}</Link>
