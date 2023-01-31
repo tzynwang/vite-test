@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -13,10 +13,21 @@ function ContentList(props: PostListProps): React.ReactElement {
   const breakpointsUpMd = useMediaQuery(theme.breakpoints.up('md'));
   const secondTitle = usePageSecondTitle();
 
+  /* Views */
+  const SecondTitle = useMemo(
+    () =>
+      secondTitle ? (
+        <Typography variant="h2">{secondTitle}</Typography>
+      ) : (
+        <React.Fragment />
+      ),
+    [secondTitle]
+  );
+
   /* Main */
   return (
     <Container>
-      <Typography variant="h2">{secondTitle}</Typography>
+      {SecondTitle}
       <div
         className={cn(
           breakpointsUpMd
