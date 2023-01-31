@@ -1,0 +1,9 @@
+:local(.category_container) {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+:local(.category_container_up_sm) {
+  flex-direction: column;
+}

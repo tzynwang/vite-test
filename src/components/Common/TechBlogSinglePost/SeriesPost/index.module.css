@@ -1,0 +1,5 @@
+:local(.posts_container) {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+}
