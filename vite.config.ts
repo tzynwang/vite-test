@@ -12,7 +12,8 @@ export default defineConfig(({ command, mode }) => {
     base: env.VITE_BASE,
     css: {
       modules: {
-        generateScopedName: '[name]__[local]__[hash:base64:5]',
+        // INFO: https://github.com/webpack/loader-utils#interpolatename
+        generateScopedName: '[folder]__[local]__[hash:base64:5]',
       },
     },
     resolve: {
