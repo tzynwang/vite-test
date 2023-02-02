@@ -32,7 +32,7 @@ const theme = createTheme({
     },
   },
   components: {
-    ...Chip,
+    ...Chip(t),
   },
 });
 

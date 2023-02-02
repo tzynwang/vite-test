@@ -1,6 +1,6 @@
-import { t } from '@/themes';
+import type { Theme } from '@/themes';
 
-export default {
+export default (t: Theme) => ({
   MuiChip: {
     styleOverrides: {
       root: {
@@ -12,4 +12,4 @@ export default {
       },
     },
   },
-};
+});
