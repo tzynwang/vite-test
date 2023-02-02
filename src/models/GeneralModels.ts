@@ -13,6 +13,9 @@ export const POST_CARD_DIMENSION_RATIO = 1.75;
 /** 設定 dayjs().format() 的日期格式 */
 export const DATE_TIME_FORMAT = 'YYYY-MM-DD';
 
+/** 元件 Breadcrumbs 預設的分隔符號 */
+export const BREADCRUMBS_DIVIDER = '/';
+
 export enum ROUTE {
   HOME = '/',
   TECH_BLOG = '/archive',
@@ -36,10 +39,18 @@ export const MOCK_POST_TITLE_2 =
 
 export const MOCK_POST_CATEGORIES = ['MOCK_MaterialUI', 'MOCK_TypeScript'];
 
+export const MOCK_POST_CATEGORIES_2 = ['MOCK_CSS', 'MOCK_JavaScript'];
+
 export const MOCK_POST_CATEGORY_PAIRS: CategoryCountPairs =
   MOCK_POST_CATEGORIES.map((categoryName, index) => ({
     categoryName,
     count: index + 7,
+  }));
+
+export const MOCK_POST_CATEGORY_PAIRS_2: CategoryCountPairs =
+  MOCK_POST_CATEGORIES_2.map((categoryName, index) => ({
+    categoryName,
+    count: index + 3,
   }));
 
 export const MOCK_POST_DATE = new Date().toString();
@@ -59,3 +70,43 @@ export const MOCK_TABLE_OF_CONTENTS: TableOfContents = Array.from(
   to: `SUB_TITLE_ANCHOR_${num}`,
   postSubTitle: `POST_SUB_TITLE_${num}`,
 }));
+
+export const MOCK_CSS_CODE = `a {
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}`;
+
+export const MOCK_JSON_CODE = `{
+  "scripts": {
+    "dev": "make dev",
+    "build": "make build",
+    "preview": "make preview",
+    "deploy": "make deploy"
+  }
+}`;
+
+export const MOCK_MAKEFILE_CODE = `include .env
+
+# open vite dev server
+.PHONY: dev
+dev:
+    npx vite
+
+# build vite app with production setting
+.PHONY: build
+build:
+    npx tsc && npx vite build
+
+# preview build result locally
+.PHONY: preview
+preview:
+    npx vite preview
+
+# remove build folder and its content
+.PHONY: clean
+clean:
+    rm -rf $(VITE_BUILD_OUTDIR)`;
