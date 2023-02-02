@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { ReactComponent as ModeDarkIcon } from '@/assets/dark_mode_black_24dp.svg';
+import ThemeToggle from '@/components/Common/ThemeToggle';
 import theme, { useMediaQuery } from '@/themes';
 import useI18n from '@/hooks/useI18n';
 import useUrlPath from '@/hooks/useUrlPath';
@@ -49,7 +49,7 @@ function Footer(): React.ReactElement {
             <li>{i18n.t('frontend.nav.GitHub')}</li>
             <li>{i18n.t('frontend.nav.RssFeed')}</li>
             <li>
-              <ModeDarkIcon width={24} height={24} />
+              <ThemeToggle />
             </li>
           </ul>
         </div>

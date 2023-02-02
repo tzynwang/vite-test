@@ -3,14 +3,13 @@ import {
   ThemeProvider,
   createTheme,
   StyledEngineProvider,
+  Experimental_CssVarsProvider as CssVarsProvider,
+  useColorScheme,
 } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const theme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
   typography: {
     h1: {
       padding: '1.25rem 0',
@@ -33,6 +32,13 @@ const theme = createTheme({
 
 export default theme;
 
-export { ThemeProvider, StyledEngineProvider, useMediaQuery, makeStyles };
+export {
+  ThemeProvider,
+  StyledEngineProvider,
+  CssVarsProvider,
+  useMediaQuery,
+  useColorScheme,
+  makeStyles,
+};
 
 export type { Theme };

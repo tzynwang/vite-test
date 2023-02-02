@@ -8,7 +8,11 @@ import TechBlogSinglePost from '@/components/Page/TechBlogSinglePost';
 import Snippet from '@/components/Page/Snippet';
 import Blog from '@/components/Page/Blog';
 import Nav from '@/components/Common/Nav';
-import theme, { ThemeProvider, StyledEngineProvider } from '@/themes';
+import theme, {
+  ThemeProvider,
+  StyledEngineProvider,
+  CssVarsProvider,
+} from '@/themes';
 import useUrlPath from '@/hooks/useUrlPath';
 
 function App(): React.ReactElement {
@@ -20,29 +24,31 @@ function App(): React.ReactElement {
     <BrowserRouter>
       <CssBaseline />
       <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <Nav />
-          <Switch>
-            <Route path={paths.techBlog}>
-              <TechBlog />
-            </Route>
-            <Route path={paths.techBlogCategory}>
-              <TechBlogCategory />
-            </Route>
-            <Route path={paths.techBlogSinglePost}>
-              <TechBlogSinglePost />
-            </Route>
-            <Route path={paths.snippet}>
-              <Snippet />
-            </Route>
-            <Route path={paths.blog}>
-              <Blog />
-            </Route>
-            <Route path={paths.home}>
-              <Home />
-            </Route>
-          </Switch>
-        </ThemeProvider>
+        <CssVarsProvider>
+          <ThemeProvider theme={theme}>
+            <Nav />
+            <Switch>
+              <Route path={paths.techBlog}>
+                <TechBlog />
+              </Route>
+              <Route path={paths.techBlogCategory}>
+                <TechBlogCategory />
+              </Route>
+              <Route path={paths.techBlogSinglePost}>
+                <TechBlogSinglePost />
+              </Route>
+              <Route path={paths.snippet}>
+                <Snippet />
+              </Route>
+              <Route path={paths.blog}>
+                <Blog />
+              </Route>
+              <Route path={paths.home}>
+                <Home />
+              </Route>
+            </Switch>
+          </ThemeProvider>
+        </CssVarsProvider>
       </StyledEngineProvider>
     </BrowserRouter>
   );
