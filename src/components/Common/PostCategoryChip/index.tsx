@@ -1,9 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import cn from 'classnames';
 import Chip from '@mui/material/Chip';
 import useUrlPath from '@/hooks/useUrlPath';
-import scopedStyles from './index.module.css';
 import type { PostCategoryChipProps } from './types';
 
 function PostCategoryChip(props: PostCategoryChipProps): React.ReactElement {
@@ -19,7 +17,6 @@ function PostCategoryChip(props: PostCategoryChipProps): React.ReactElement {
   return (
     <Chip
       label={<Link to={categoryUrl}>{category}</Link>}
-      className={cn(scopedStyles.postCategoryChip)}
       {...muiChipRestProps}
     />
   );

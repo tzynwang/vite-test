@@ -8,6 +8,9 @@ import {
 } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Chip from './components/Chip';
+
+export const t = createTheme();
 
 const theme = createTheme({
   typography: {
@@ -27,6 +30,9 @@ const theme = createTheme({
       fontSize: '1.75rem',
       paddingBottom: '0.5rem',
     },
+  },
+  components: {
+    ...Chip,
   },
 });
 
