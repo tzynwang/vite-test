@@ -1,0 +1,15 @@
+:local(.wrapper) {
+  position: relative;
+}
+
+:local(.copy_button) {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+:local(.copy_button):hover {
+  opacity: 1;
+}
