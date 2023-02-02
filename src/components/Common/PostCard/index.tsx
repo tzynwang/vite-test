@@ -12,6 +12,7 @@ import debounce from 'lodash/debounce';
 import Typography from '@mui/material/Typography';
 import useGetPostCategoryChip from '@/hooks/useGetPostCategoryChip';
 import { POST_CARD_DIMENSION_RATIO } from '@/models/GeneralModels';
+import { useColorScheme } from '@/themes';
 import scopedStyles from './index.module.css';
 import type { PostCardProps } from './types';
 
@@ -28,6 +29,7 @@ function PostCard(props: PostCardProps): React.ReactElement {
     useState<POST_CARD_CONTAINER_RATIO>(POST_CARD_CONTAINER_RATIO.DEFAULT);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const PostCategoryChips = useGetPostCategoryChip(postCategories);
+  const { mode } = useColorScheme();
 
   /* Data */
   const containerStyle = useMemo(() => {
@@ -40,6 +42,14 @@ function PostCard(props: PostCardProps): React.ReactElement {
         return '';
     }
   }, [containerRatio]);
+  const cardBgColor = useMemo(() => {
+    if (mode === 'dark') {
+      return 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))';
+    }
+    if (mode === 'light') {
+      return 'linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4))';
+    }
+  }, [mode]);
 
   /* Functions */
   const getContainerDimension = useCallback((): void => {
@@ -92,7 +102,9 @@ function PostCard(props: PostCardProps): React.ReactElement {
         return (
           <div
             className={cn(scopedStyles.post_image)}
-            style={{ backgroundImage: coverImage }}
+            style={{
+              backgroundImage: `${cardBgColor}, ${coverImage}`,
+            }}
           >
             <Link to={postUrl}>
               <Typography variant="h3">{postTitle}</Typography>
@@ -108,7 +120,7 @@ function PostCard(props: PostCardProps): React.ReactElement {
       default:
         return <React.Fragment />;
     }
-  }, [containerRatio, coverImage, postTitle, postDate, postUrl]);
+  }, [containerRatio, coverImage, postTitle, postDate, postUrl, cardBgColor]);
 
   /* Main */
   return (
