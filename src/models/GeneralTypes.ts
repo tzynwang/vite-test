@@ -1,3 +1,5 @@
+import { syntaxHighlighterLanguages } from '@/tools/react-syntax-highlighter-language-type';
+
 export interface CategoryCountPair {
   categoryName: string;
   count: number;
@@ -22,3 +24,5 @@ export interface TableOfContentItem {
 }
 
 export type TableOfContents = TableOfContentItem[];
+
+export type SyntaxHighlighterLanguage = typeof syntaxHighlighterLanguages[number];
